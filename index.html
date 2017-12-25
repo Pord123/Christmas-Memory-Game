@@ -1,0 +1,240 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Christmas Memory Game</title>
+<style>
+	body{
+		background: url(White-christmas-light-background.jpg) no-repeat ;
+	}
+	#gameboard{
+    	background: #F7F7F7;
+    	border: #ccc 1px solid;
+		width:320px;
+		height: 300px;
+		padding:24px;
+		margin: 0px auto;
+		
+    }
+	#gameboard > div{
+		background: url(back.jpg) no-repeat ;
+		background-size:98% 98%;
+		border:#000 1px solid;
+		width:2.5cm;
+		height:2.5cm;
+		float:left;
+		
+		padding:20px;
+		font-size:64px;
+		cursor:pointer;
+		text-align:center;
+		border-color: #F7F7F7;
+		border-radius: 10px;
+		margin:5px;
+		margin-right: -10px;
+		margin-left: 20px;
+		
+	}
+	
+	h1{
+		text-align: center;
+		font-family: A Gentle Touch;
+		font-size: 60px;
+		color: white;
+		margin-top: -20px;
+		font-weight: 800;
+
+	}
+	
+	h3{
+		text-align: center;
+		font-family:AR BONNIE;
+		font-size: 20px;
+		color: white;
+	
+	}
+	#square{
+		width: 100%;
+		height: 200px;
+		background: #FF3B30;
+		margin-top: -200px;
+		margin-bottom: 50px;
+		border-radius: 10px;
+	}
+
+	
+	#dos{
+		background: white;
+		width: 100%;
+		height: 30px;
+		margin-top: -165px;
+		opacity: 0.25;
+		margin-bottom: 60px;
+	}
+	
+
+	#red{
+		width: 100%;
+		height: 200px;
+		margin-top: -115px;
+		
+	}
+
+	
+</style>
+<script>
+	var arreglo_cartas = ['0','0','1','1'];
+	var valores_placeholder = [];
+	var id_placeholder = [];
+	var volteadas = 0;
+	
+	Array.prototype.barajar = function(){
+    var i = this.length, j, temp;
+    while(--i > 0){
+        j = Math.floor(Math.random() * (i+1));
+        temp = this[j];
+        this[j] = this[i];
+        this[i] = temp;
+    }
+}
+
+function newBoard(){
+	volteadas = 0;
+	var output = '';
+    arreglo_cartas.barajar();
+	for(var i = 0; i < arreglo_cartas.length; i++){
+		output += '<div id="tile_'+i+'" onclick="VoltearCarta(this,\''+arreglo_cartas[i]+'\')"></div>';
+		
+	}
+	document.getElementById('gameboard').innerHTML = output;
+}
+function VoltearCarta(tile,val){
+	if(tile.innerHTML == "" && valores_placeholder.length < 2){
+		
+		if (val=="0"){
+			
+		document.getElementById(tile.id).style.background = 'url(0.jpg) no-repeat ';}
+		document.getElementById(tile.id).style.backgroundSize="98% 98%";
+		
+		
+		if (val=="1"){
+		document.getElementById(tile.id).style.background = 'url(1.jpg) no-repeat center ';}
+		document.getElementById(tile.id).style.backgroundSize="97% 97%";
+		
+		if (val=="2"){
+		document.getElementById(tile.id).style.background = 'url(2.jpg) no-repeat';}
+		document.getElementById(tile.id).style.backgroundSize="97% 97%";
+		
+		if (val=="3"){
+		document.getElementById(tile.id).style.background = 'url(3.jpg) no-repeat';}
+		document.getElementById(tile.id).style.backgroundSize="97% 97%";
+		
+		if (val=="4"){
+		document.getElementById(tile.id).style.background = 'url(4.jpg) no-repeat';}
+		document.getElementById(tile.id).style.backgroundSize="97% 97%";
+		
+		if (val=="5"){
+		document.getElementById(tile.id).style.background = 'url(5.jpg) no-repeat';}
+		document.getElementById(tile.id).style.backgroundSize="97% 97%";
+		
+		if (val=="6"){
+		document.getElementById(tile.id).style.background = 'url(6.jpg) no-repeat';}
+		document.getElementById(tile.id).style.backgroundSize="97% 97%";
+		
+		if (val=="7"){
+		document.getElementById(tile.id).style.background = 'url(7.jpg) no-repeat';}
+		document.getElementById(tile.id).style.backgroundSize="97% 97%";
+		
+		if (val=="8"){
+		document.getElementById(tile.id).style.background = 'url(8.jpg) no-repeat';}
+		document.getElementById(tile.id).style.backgroundSize="97% 97%";
+		
+		if (val=="9"){
+		document.getElementById(tile.id).style.background = 'url(9.jpg) no-repeat';}
+		document.getElementById(tile.id).style.backgroundSize="97% 97%";
+		
+		if (val=="10"){
+		document.getElementById(tile.id).style.background = 'url(10.jpg) no-repeat';}
+		document.getElementById(tile.id).style.backgroundSize="97% 97%";
+		
+		if (val=="11"){
+		document.getElementById(tile.id).style.background = 'url(11.jpg) no-repeat';}
+		document.getElementById(tile.id).style.backgroundSize="97% 97%";
+		
+		if (val=="12"){
+		document.getElementById(tile.id).style.background = 'url(12.jpg) no-repeat';}
+		document.getElementById(tile.id).style.backgroundSize="97% 97%";
+		
+		if (val=="13"){
+		document.getElementById(tile.id).style.background = 'url(13.jpg) no-repeat';}
+		document.getElementById(tile.id).style.backgroundSize="97% 97%";
+		
+		if (val=="14"){
+		document.getElementById(tile.id).style.background = 'url(14.jpg) no-repeat';}
+		document.getElementById(tile.id).style.backgroundSize="97% 97%";
+		
+		if (val=="15"){
+		document.getElementById(tile.id).style.background = 'url(15.jpg) no-repeat';}
+		document.getElementById(tile.id).style.backgroundSize="97% 97%";
+		
+		if (val=="16"){
+		document.getElementById(tile.id).style.background = 'url(16.jpg) no-repeat';}
+		document.getElementById(tile.id).style.backgroundSize="97% 97%";
+		
+		if (val=="17"){
+		document.getElementById(tile.id).style.background = 'url(17.jpg) no-repeat';}
+		document.getElementById(tile.id).style.backgroundSize="97% 97%";
+		
+		if(valores_placeholder.length == 0){
+			valores_placeholder.push(val);
+			id_placeholder.push(tile.id);
+		} else if(valores_placeholder.length == 1){
+			valores_placeholder.push(val);
+			id_placeholder.push(tile.id);
+			if(valores_placeholder[0] == valores_placeholder[1]){
+				volteadas += 2;
+				// Clear both arrays
+				valores_placeholder = [];
+            	id_placeholder = [];
+				// Check to see if the whole board is cleared
+				if(volteadas == arreglo_cartas.length){
+				setTimeout(alert("Excelent, you have defeated this level. Prepare for the next one."),1000);
+				setTimeout(window.location.href="level2.html",1000);
+				}
+			} else {
+				function VoltearParaAtras(){
+				    // Flip the 2 tiles back over
+				    var carta1 = document.getElementById(id_placeholder[0]);
+				    var carta2 = document.getElementById(id_placeholder[1]);
+				    carta1.style.background = 'url(back.jpg) no-repeat';
+					carta1.style.backgroundSize="98% 98%";
+            	    carta1.innerHTML = "";
+				    carta2.style.background = 'url(back.jpg) no-repeat';
+					carta2.style.backgroundSize="98% 98%";
+            	    carta2.innerHTML = "";
+				    // Clear both arrays
+				    valores_placeholder = [];
+            	    id_placeholder = [];
+				}
+				setTimeout(VoltearParaAtras, 700);
+			}
+		}
+	}
+}
+</script>
+</head>
+
+
+<body>
+<embed src="1.mp3" width="0" height="0" loop="true" autostart="true" hidden="true" />
+<h3> MAR&Iacute;A ESTELA POU & PEDRO ANTONIO BREt&Oacute;N</h3>
+<h1>Christmas Memory Game</h1>
+<div id="square"></div>
+<img id="red" src="giphy.gif">
+<div id="dos"> </div>
+
+<div id="gameboard"></div>
+
+<script>newBoard();</script>
+</body>
+</html>
